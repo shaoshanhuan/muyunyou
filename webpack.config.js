@@ -1,4 +1,3 @@
-
 module.exports = {
     entry: './enter.js',
     output: {
@@ -11,11 +10,18 @@ module.exports = {
     },
     mode: 'development',
     module: {
-        rules: [
+        rules: [{
+                test: /\.(html)$/,
+                use: {
+                    loader: 'html-loader',
+                    options: {
+                        attrs: [':data-src']
+                    }
+                }
+            },
             {
                 test: /\.less$/,
-                use: [
-                    {
+                use: [{
                         loader: 'style-loader', // creates style nodes from JS strings
                     },
                     {
@@ -25,7 +31,7 @@ module.exports = {
                         loader: 'less-loader', // compiles Less to CSS
                     },
                 ],
-            },
+            }
         ],
     }
 };
