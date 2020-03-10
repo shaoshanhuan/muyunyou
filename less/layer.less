@@ -1,7 +1,7 @@
 .layer {
     overflow: hidden;
 
-    &:nth-child(2n) {
+    &:nth-child(2n+1) {
         background-color: #F7F7F7;
     }
 
@@ -31,11 +31,14 @@
             margin-top: 10px;
 
             ul {
-
-
                 li {
                     float: left;
-                    margin-right: 14px;
+                    margin-right: 15px;
+                    font-size: 15px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
 
                     &.current {
                         a {
@@ -46,6 +49,12 @@
                         padding-bottom: 4px;
 
                     }
+                    &:hover{
+                        a{
+                            color: #20BD9A;
+
+                        }
+                    }
                 }
             }
         }
@@ -53,6 +62,12 @@
 
     .grid {
         overflow: hidden;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+
+        &:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
+
+        }
 
         img.p-img {
             transition: all .4s ease 0s;
@@ -143,6 +158,7 @@
             width: 264px;
             height: 110px;
             margin-right: 32px;
+            box-shadow: none;
 
 
             &:last-child {
@@ -153,10 +169,6 @@
                 width: 264px;
                 height: 110px;
                 transition: all 0.3s ease 0s;
-
-                &:hover {
-                    transform: scale(1.1);
-                }
             }
         }
     }
@@ -174,7 +186,6 @@
                 margin-right: 32px;
                 background-color: white;
                 margin-bottom: 32px;
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
 
                 &:nth-child(4n) {
                     margin-right: 0;
@@ -192,18 +203,13 @@
 
                 .tip {
                     padding: 20px 10px 0;
-                    font-size: 15px;
+                    font-size: 14px;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     display: -webkit-box;
                     -webkit-line-clamp: 2;
                     -webkit-box-orient: vertical;
                     line-height: 24px;
-                }
-
-                &:hover {
-                    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
-                    ;
                 }
             }
         }
@@ -225,7 +231,6 @@
                 margin-right: 32px;
                 background-color: white;
                 margin-bottom: 32px;
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
                 position: relative;
                 transition: all .4s ease 0s;
 
@@ -342,6 +347,18 @@
                 float: left;
                 width: 364px - 120px;
                 height: 120px;
+
+                .inn {
+                    padding: 10px;
+                    font-size: 16px;
+                    font-size: 15px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    line-height: 24px;
+                }
             }
         }
 
@@ -355,6 +372,16 @@
                 height: 270px;
                 position: relative;
 
+                .pic {
+                    width: 364px;
+                    height: 270px;
+
+                    img {
+                        width: 364px;
+                        height: 270px;
+                    }
+                }
+
                 .tip {
                     position: absolute;
                     bottom: 0;
@@ -364,21 +391,22 @@
                     background-color: rgba(0, 0, 0, 0.527);
 
                     .inn {
-                        padding: 10px;
+                        padding: 10px 16px;
                         color: white;
                         line-height: 30px;
+
                     }
 
                     .type {
                         position: absolute;
-                        left: 10px;
+                        left: 16px;
                         bottom: 10px;
                         color: white;
                     }
 
                     .price {
                         position: absolute;
-                        right: 10px;
+                        right: 16px;
                         bottom: 10px;
                         color: white;
 
@@ -400,6 +428,143 @@
         .col3 {
             float: left;
             width: 364px;
+
+            .more {
+                height: 270px;
+                position: relative;
+                background: -webkit-linear-gradient(top, #FF6374, #FF7368);
+            }
         }
     }
+}
+
+.tsddty {
+    height: 456px;
+
+    .hd {
+        h3 {
+            float: none;
+            text-align: center;
+        }
+    }
+
+    li.grid {
+        width: 264px;
+        height: 290px;
+        float: left;
+        margin-right: 32px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+
+        .tip {
+            padding: 10px;
+
+            .inn {
+                .title {
+                    font-size: 16px;
+                    color: #000000;
+                    line-height: 24px;
+                    font-weight: bold;
+                }
+
+                .extra {
+                    padding-top: 10px;
+                    font-size: 13px;
+
+                    .star {
+                        color: #FA6400;
+                    }
+
+                    .score {
+                        color: #FA6400;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.another-style {
+    height: 738px;
+    .bd{
+        ul{
+            li.grid{
+                &.big{
+                    position: relative;
+                    .tip{
+                        z-index: 9999;
+                        height: 80px;
+                        background:-webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.5));
+                    }
+
+                    &:hover .mask{
+                        opacity: 1;
+                    }
+                    &:hover .y{
+                        transform: none;
+                    }
+                    &:hover .y .e{
+                        transform: none;
+                    }
+                    &:hover .y .c{
+                        transform: none;
+                    }
+                    .mask{
+                        transition: all .5s ease 0s;
+                        opacity: 0;
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        background-color: rgba(0,0,0,.5)
+                    }
+                    .y{
+                        transition: all .5s ease 0s;
+                        position:absolute;
+                        top: 40px;
+                        left:50%;
+                        margin-left:-53px;
+                        width: 106px;
+                        height: 106px;
+                        border: 2px solid white;
+                        border-radius: 50%;
+                        transform: scale(0);
+
+                        .c{
+                            transition: all .3s ease .2s;
+                            text-align: center;
+                            color:white;
+                            padding-top: 20px;
+                            font-size: 20px;
+                            transform: scale(0);
+                        }
+                        .e{
+                            transition: all .3s ease .2s;
+                            color:white;
+                            text-align: center;
+                            padding-top: 10px;
+                            transform: scale(0);
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+.zsj .more{
+
+    background: -webkit-linear-gradient(top, #BD5EE8, #832ABB) !important;
+                 
+}
+.gt .more{
+
+    background: -webkit-linear-gradient(top, #41D8E9 , #3685EA) !important;
+                 
 }

@@ -1,4 +1,63 @@
 .banner{
-    height: 420px;
-    background-color: #eee;
+    width: 100%;
+    min-width: 1152px;
+    position: relative;
+    .carousel{
+        width: 100%;
+        overflow: hidden;
+        ul{
+            width: 500%;
+            overflow: hidden;
+            li{
+                float: left;
+                width: 20%;
+                img{
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                }
+            }
+        }
+    }
+    .center-wrap{
+        position: absolute;
+        top:0;
+        left:50%;
+        width: 1152px;
+        margin-left: -1152px / 2;
+        .btns {
+            .btn{
+                position: absolute;
+                width: 32px;
+                height: 44px;
+                background-image:url(/images/icons.png);
+                top:50%;
+                margin-top: -22px;
+
+                &.leftbtn{
+                    left: -40px;
+                    background-position: -145px -61px;
+                    &:hover{
+                        background-position: -191px -61px;
+                    }
+                }
+                &.rightbtn{
+                    right: -40px;
+                    background-position: -144px -10px;
+                    &:hover{
+                        background-position: -190px -10px;
+                    }
+                }
+            }
+        }
+
+        .v-menu-box{
+            position: absolute;
+            left:0;
+            top:0;
+            width: 296px;
+            height: 100%;
+            background-color: orange;
+        }
+    }
 }

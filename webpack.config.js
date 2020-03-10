@@ -10,7 +10,8 @@ module.exports = {
     },
     mode: 'development',
     module: {
-        rules: [{
+        rules: [
+            {
                 test: /\.(html)$/,
                 use: {
                     loader: 'html-loader',
@@ -21,7 +22,8 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-                use: [{
+                use: [
+                    {
                         loader: 'style-loader', // creates style nodes from JS strings
                     },
                     {
