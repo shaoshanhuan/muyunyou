@@ -50,8 +50,8 @@ a {
         @hovercolor: #58f8d5;
 
         .shortcut-links {
-            ul {
-                li {
+            &>ul {
+                &>li {
                     float: left;
                     padding: 0 9px;
                     line-height: 32px;
@@ -61,16 +61,16 @@ a {
                         padding-left: 0;
                     }
 
-                    a {
+                    &>a {
                         color: white;
                         font-weight: normal;
-
-                        &:hover {
-                            color: @hovercolor;
-                        }
                     }
 
-                    &.have-menu {
+                    &:hover>a {
+                        color: @hovercolor;
+                    }
+
+                    &.have_menu {
                         padding-right: 22px;
                         position: relative;
 
@@ -88,6 +88,39 @@ a {
 
                         &:hover::before {
                             transform: rotate(180deg);
+                        }
+
+                        &:hover .h_menu {
+                            display: block;
+                        }
+
+                        .h_menu {
+                            position: absolute;
+                            left: 0;
+                            top: 32px;
+                            z-index: 99999;
+                            display: none;
+                            padding-top: 6px;
+                            width: 130px;
+
+                            .menu_box {
+                                background: rgba(255, 255, 255, 0.87);
+                                width: 100%;
+                                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20);
+                                padding: 10px;
+
+                                ul {
+                                    li {
+                                        line-height: 25px;
+
+                                        &>a {
+                                            &:hover {
+                                                color: #20BD9A;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -113,10 +146,10 @@ a {
                             content: '';
                             position: absolute;
                             width: 2px;
-                            height: 18px;
+                            height: 20px;
                             background-color: white;
                             top: 50%;
-                            margin-top: -9px;
+                            margin-top: -11px;
                             right: 5px;
                         }
                     }
@@ -132,7 +165,13 @@ a {
                         &:hover {
                             color: @hovercolor;
                         }
+
+                        &.fdj{
+                            font-size: 24px;
+                        }
                     }
+
+
                 }
             }
         }
@@ -142,8 +181,8 @@ a {
         height: 40px;
         background: #20BD9A;
 
-        ul {
-            li {
+        ul.main-nav-list {
+            &>li {
                 float: left;
                 padding: 0 9px;
                 line-height: 40px;
@@ -152,9 +191,7 @@ a {
                     padding-left: 0;
                 }
 
-
-
-                &.have-menu {
+                &.have_menu {
                     padding-right: 20px;
                     position: relative;
 
@@ -168,18 +205,71 @@ a {
                         border: 4px solid transparent;
                         border-top-color: white;
                         border-bottom: none;
+                        transition: all .4s ease 0s;
                     }
+
+                    &:hover .h_menu {
+                        display: block;
+                    }
+
+                    .h_menu {
+                        position: absolute;
+                        left: 0;
+                        top: 38px;
+                        z-index: 99999;
+                        display: none;
+                        padding-top: 6px;
+                        &.jj{
+                            width: 200px;
+                        }
+                        &.gt{
+                            width: 170px;
+                        }
+                        &.dd{
+                            width: 200px;
+                        }
+                        &.sd{
+                            width: 120px;
+                        }
+
+                        .menu_box {
+                            background: rgba(255, 255, 255, 0.87);
+                            width: 100%;
+                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20);
+                            padding: 10px;
+
+                            dl {
+                                dt{
+                                    font-weight: bold;
+                                    font-size: 16px;
+                                    line-height: 24px;
+                                    margin-bottom: 6px;
+                                }
+                                dd {
+                                    line-height: 25px;
+
+                                    &>a {
+                                        font-size: 13px;
+                                        &:hover {
+                                            color: #20BD9A;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
                 }
 
-                a {
+                &>a {
                     color: white;
                     display: block;
-
-                    &:hover {
-                        // font-weight: bold;
-
-                        text-shadow: 1px 1px 1px rgba(9, 87, 35, 0.678);
-                    }
+                }
+                &:hover>a{
+                    text-shadow: 1px 1px 1px rgba(9, 87, 35, 0.678);
+                }
+                &.have_menu:hover::before{
+                    transform:rotate(180deg)
                 }
             }
         }
@@ -251,4 +341,3 @@ a {
         }
     }
 }
-
